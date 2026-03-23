@@ -1,0 +1,230 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:FN-.YYYY.-.#####",
+ "doctype": "DocType",
+ "document_type": "Transaction",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_reference",
+  "survey_assignment",
+  "insurer",
+  "bill_to_customer",
+  "column_break_reference",
+  "status",
+  "assigned_surveyor",
+  "fee_note_date",
+  "due_date",
+  "section_fee",
+  "fee_type",
+  "survey_fee_item",
+  "base_fee_amount",
+  "column_break_fee",
+  "net_assessed_amount",
+  "fee_percent",
+  "section_items",
+  "fee_items",
+  "section_totals",
+  "subtotal",
+  "tax_amount",
+  "column_break_totals",
+  "total_amount",
+  "section_invoice",
+  "sales_invoice_reference",
+  "section_collection",
+  "payment_received",
+  "payment_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_reference",
+   "fieldtype": "Section Break",
+   "label": "Fee Note Details"
+  },
+  {
+   "fieldname": "survey_assignment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Survey Assignment",
+   "options": "Survey Assignment",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "survey_assignment.insurer",
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "label": "Insurer",
+   "options": "Insurer Master",
+   "read_only": 1
+  },
+  {
+   "description": "Reference to the insurer's ERPNext Customer record when ERPNext is installed.",
+   "fieldname": "bill_to_customer",
+   "fieldtype": "Data",
+   "label": "Bill To (Customer)"
+  },
+  {
+   "fieldname": "column_break_reference",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nApproved\nPaid\nCancelled"
+  },
+  {
+   "fetch_from": "survey_assignment.assigned_surveyor",
+   "fieldname": "assigned_surveyor",
+   "fieldtype": "Link",
+   "label": "Surveyor",
+   "options": "Surveyor Profile",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "fee_note_date",
+   "fieldtype": "Date",
+   "label": "Fee Note Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "section_fee",
+   "fieldtype": "Section Break",
+   "label": "Fee Calculation"
+  },
+  {
+   "fieldname": "fee_type",
+   "fieldtype": "Select",
+   "label": "Fee Type",
+   "options": "Flat Fee\nPercentage of Assessed\nManual",
+   "reqd": 1
+  },
+  {
+   "description": "Reference to the ERPNext service item used on the sales invoice.",
+   "fieldname": "survey_fee_item",
+   "fieldtype": "Data",
+   "label": "Survey Fee Item"
+  },
+  {
+   "depends_on": "eval:doc.fee_type=='Flat Fee'",
+   "fieldname": "base_fee_amount",
+   "fieldtype": "Currency",
+   "label": "Flat Fee Amount"
+  },
+  {
+   "fieldname": "column_break_fee",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "survey_assignment.net_assessed_amount",
+   "fieldname": "net_assessed_amount",
+   "fieldtype": "Currency",
+   "label": "Net Assessed Amount",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.fee_type=='Percentage of Assessed'",
+   "fieldname": "fee_percent",
+   "fieldtype": "Percent",
+   "label": "Fee %"
+  },
+  {
+   "fieldname": "section_items",
+   "fieldtype": "Section Break",
+   "label": "Fee Line Items"
+  },
+  {
+   "fieldname": "fee_items",
+   "fieldtype": "Table",
+   "label": "Fee Items",
+   "options": "Fee Note Item"
+  },
+  {
+   "fieldname": "section_totals",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_amount",
+   "fieldtype": "Currency",
+   "label": "Tax Amount"
+  },
+  {
+   "fieldname": "column_break_totals",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_invoice",
+   "fieldtype": "Section Break",
+   "label": "Sales Invoice"
+  },
+  {
+   "description": "Reference to the draft ERPNext Sales Invoice created from this fee note.",
+   "fieldname": "sales_invoice_reference",
+   "fieldtype": "Data",
+   "label": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_collection",
+   "fieldtype": "Section Break",
+   "label": "Collection"
+  },
+  {
+   "fieldname": "payment_received",
+   "fieldtype": "Check",
+   "label": "Payment Received"
+  },
+  {
+   "depends_on": "eval:doc.payment_received==1",
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Fee Note",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "survey_assignment, insurer, bill_to_customer, assigned_surveyor",
+ "sort_field": "fee_note_date",
+ "sort_order": "DESC",
+ "title_field": "survey_assignment",
+ "track_changes": 1
+}

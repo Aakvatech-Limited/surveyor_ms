@@ -1,0 +1,140 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:surveyor_name",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_identity",
+  "surveyor_name",
+  "licence_number",
+  "column_break_identity",
+  "is_active",
+  "employee_reference",
+  "supplier_reference",
+  "section_specialisations",
+  "specialisations",
+  "section_empanelment",
+  "empanelment_table",
+  "section_contact",
+  "email",
+  "phone",
+  "column_break_contact",
+  "signature"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_identity",
+   "fieldtype": "Section Break",
+   "label": "Surveyor Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "surveyor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Surveyor Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "licence_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Licence / Registration No."
+  },
+  {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "description": "Reference to the ERPNext Employee record for staff surveyors.",
+   "fieldname": "employee_reference",
+   "fieldtype": "Data",
+   "label": "ERPNext Employee"
+  },
+  {
+   "description": "Reference to the ERPNext Supplier record for contractor surveyors.",
+   "fieldname": "supplier_reference",
+   "fieldtype": "Data",
+   "label": "ERPNext Supplier"
+  },
+  {
+   "fieldname": "section_specialisations",
+   "fieldtype": "Section Break",
+   "label": "Specialisations"
+  },
+  {
+   "fieldname": "specialisations",
+   "fieldtype": "Table MultiSelect",
+   "label": "Specialisations",
+   "options": "Surveyor Specialisation"
+  },
+  {
+   "fieldname": "section_empanelment",
+   "fieldtype": "Section Break",
+   "label": "Insurer Empanelment"
+  },
+  {
+   "fieldname": "empanelment_table",
+   "fieldtype": "Table",
+   "label": "Empanelled Insurers",
+   "options": "Surveyor Empanelment"
+  },
+  {
+   "fieldname": "section_contact",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Attach Image",
+   "label": "Signature Image"
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Surveyor Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "surveyor_name, licence_number, email, employee_reference, supplier_reference",
+ "sort_field": "surveyor_name",
+ "sort_order": "ASC",
+ "title_field": "surveyor_name",
+ "track_changes": 1
+}

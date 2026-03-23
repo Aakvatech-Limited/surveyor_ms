@@ -1,0 +1,195 @@
+{
+ "app": "surveyor_ms",
+ "charts": [],
+ "content": "[{\"id\":\"assignments_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Survey Assignments\",\"col\":3}},{\"id\":\"reports_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Survey Reports\",\"col\":3}},{\"id\":\"inspections_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Site Inspections\",\"col\":3}},{\"id\":\"fees_shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fee Notes\",\"col\":3}},{\"id\":\"surveyor_spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"operations_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":4}},{\"id\":\"masters_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"resolution_card\",\"type\":\"card\",\"data\":{\"card_name\":\"Resolution\",\"col\":4}}]",
+ "creation": "2026-03-23 10:33:59.192068",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "clipboard",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Surveyor Management System",
+ "links": [
+  {
+   "description": "Core operational documents for survey assignments, inspections, reports, and billing.",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Survey Assignment",
+   "link_count": 0,
+   "link_to": "Survey Assignment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Site Inspection Log",
+   "link_count": 0,
+   "link_to": "Site Inspection Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Survey Report",
+   "link_count": 0,
+   "link_to": "Survey Report",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Appointment Letter",
+   "link_count": 0,
+   "link_to": "Appointment Letter",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Fee Note",
+   "link_count": 0,
+   "link_to": "Fee Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Follow-Up Log",
+   "link_count": 0,
+   "link_to": "Follow-up Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Reference masters for insurers and surveyors.",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurer Master",
+   "link_count": 0,
+   "link_to": "Insurer Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Surveyor Profile",
+   "link_count": 0,
+   "link_to": "Surveyor Profile",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "description": "Resolution and dispute tracking records.",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Resolution",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Repudiation Register",
+   "link_count": 0,
+   "link_to": "Repudiation Register",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-03-23 11:13:13.583961",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Surveyor Management System",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 10.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Survey Assignments",
+   "link_to": "Survey Assignment",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Survey Reports",
+   "link_to": "Survey Report",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Site Inspections",
+   "link_to": "Site Inspection Log",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "label": "Fee Notes",
+   "link_to": "Fee Note",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Insuere Master",
+   "link_to": "Insurer Master",
+   "type": "DocType"
+  }
+ ],
+ "title": "Surveyor Management System",
+ "type": "Workspace"
+}

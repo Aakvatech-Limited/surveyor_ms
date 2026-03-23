@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:AL-.YYYY.-.#####",
+ "doctype": "DocType",
+ "document_type": "Transaction",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_reference",
+  "survey_assignment",
+  "insurer",
+  "letter_date",
+  "column_break_reference",
+  "assigned_surveyor",
+  "loss_location",
+  "section_insured",
+  "insured_name",
+  "insured_phone",
+  "column_break_insured",
+  "insured_email",
+  "section_visit",
+  "proposed_visit_date",
+  "proposed_visit_time",
+  "column_break_visit",
+  "special_instructions",
+  "section_letter",
+  "letter_body",
+  "section_delivery",
+  "email_sent",
+  "email_sent_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_reference",
+   "fieldtype": "Section Break",
+   "label": "Letter Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "survey_assignment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Survey Assignment",
+   "options": "Survey Assignment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "label": "Insurer",
+   "options": "Insurer Master"
+  },
+  {
+   "default": "Today",
+   "fieldname": "letter_date",
+   "fieldtype": "Date",
+   "label": "Letter Date"
+  },
+  {
+   "fieldname": "column_break_reference",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_surveyor",
+   "fieldtype": "Link",
+   "label": "Assigned Surveyor",
+   "options": "Surveyor Profile"
+  },
+  {
+   "fieldname": "loss_location",
+   "fieldtype": "Small Text",
+   "label": "Loss Location"
+  },
+  {
+   "fieldname": "section_insured",
+   "fieldtype": "Section Break",
+   "label": "Insured Contact"
+  },
+  {
+   "fieldname": "insured_name",
+   "fieldtype": "Data",
+   "label": "Insured Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insured_phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_insured",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "insured_email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_visit",
+   "fieldtype": "Section Break",
+   "label": "Proposed Visit"
+  },
+  {
+   "fieldname": "proposed_visit_date",
+   "fieldtype": "Date",
+   "label": "Proposed Visit Date"
+  },
+  {
+   "fieldname": "proposed_visit_time",
+   "fieldtype": "Time",
+   "label": "Proposed Visit Time"
+  },
+  {
+   "fieldname": "column_break_visit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "special_instructions",
+   "fieldtype": "Small Text",
+   "label": "Special Instructions"
+  },
+  {
+   "fieldname": "section_letter",
+   "fieldtype": "Section Break",
+   "label": "Letter Content"
+  },
+  {
+   "fieldname": "letter_body",
+   "fieldtype": "Text Editor",
+   "label": "Letter Body"
+  },
+  {
+   "fieldname": "section_delivery",
+   "fieldtype": "Section Break",
+   "label": "Delivery"
+  },
+  {
+   "fieldname": "email_sent",
+   "fieldtype": "Check",
+   "label": "Email Sent"
+  },
+  {
+   "fieldname": "email_sent_date",
+   "fieldtype": "Datetime",
+   "label": "Email Sent At",
+   "read_only": 1
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Appointment Letter",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "survey_assignment, insured_name, insurer, assigned_surveyor",
+ "sort_field": "letter_date",
+ "sort_order": "DESC",
+ "title_field": "insured_name",
+ "track_changes": 1
+}

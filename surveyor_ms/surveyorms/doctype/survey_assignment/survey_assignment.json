@@ -1,0 +1,377 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "doctype": "DocType",
+ "document_type": "Transaction",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_assignment",
+  "naming_series",
+  "insurer",
+  "insurer_ref_no",
+  "appointment_date",
+  "column_break_assignment",
+  "status",
+  "assigned_surveyor",
+  "survey_type",
+  "priority",
+  "project_reference",
+  "section_claim",
+  "claim_ref_no",
+  "policy_no",
+  "date_of_loss",
+  "column_break_claim",
+  "nature_of_loss",
+  "class_of_insurance",
+  "sum_insured",
+  "section_insured",
+  "insured_name",
+  "insured_contact",
+  "column_break_insured",
+  "insured_phone",
+  "insured_email",
+  "section_location",
+  "loss_location",
+  "section_sla",
+  "preliminary_report_due",
+  "final_report_due",
+  "column_break_sla",
+  "preliminary_report_submitted",
+  "final_report_submitted",
+  "sla_status",
+  "section_items",
+  "loss_items",
+  "section_summary",
+  "total_claimed_amount",
+  "total_assessed_amount",
+  "column_break_summary",
+  "total_depreciation",
+  "total_salvage_value",
+  "net_assessed_amount",
+  "section_documents",
+  "required_documents",
+  "section_notes",
+  "internal_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_assignment",
+   "fieldtype": "Section Break",
+   "label": "Assignment Details"
+  },
+  {
+   "default": "SMS-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "SMS-.YYYY.-.#####\nSMS-FIRE-.YYYY.-.#####\nSMS-MOTOR-.YYYY.-.#####\nSMS-MARINE-.YYYY.-.#####\nSMS-MISC-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Insurer",
+   "options": "Insurer Master",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insurer_ref_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Insurer Ref / Appointment No."
+  },
+  {
+   "default": "Today",
+   "fieldname": "appointment_date",
+   "fieldtype": "Date",
+   "label": "Appointment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_assignment",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nIn Progress\nPreliminary Report Submitted\nFinal Report Submitted\nClosed\nCancelled"
+  },
+  {
+   "fieldname": "assigned_surveyor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned Surveyor",
+   "options": "Surveyor Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "survey_type",
+   "fieldtype": "Select",
+   "label": "Survey Type",
+   "options": "Preliminary\nFinal\nRe-survey\nJoint\nDeskwork",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "description": "Reference to the ERPNext Project created for this assignment.",
+   "fieldname": "project_reference",
+   "fieldtype": "Data",
+   "label": "Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_claim",
+   "fieldtype": "Section Break",
+   "label": "Claim Details"
+  },
+  {
+   "fieldname": "claim_ref_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Claim Reference No."
+  },
+  {
+   "fieldname": "policy_no",
+   "fieldtype": "Data",
+   "label": "Policy No."
+  },
+  {
+   "fieldname": "date_of_loss",
+   "fieldtype": "Date",
+   "label": "Date of Loss",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_claim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nature_of_loss",
+   "fieldtype": "Select",
+   "label": "Nature of Loss",
+   "options": "Fire\nAccident\nMarine Damage\nTheft\nFlood\nMachinery Breakdown\nNatural Disaster\nBusiness Interruption\nOther"
+  },
+  {
+   "fieldname": "class_of_insurance",
+   "fieldtype": "Select",
+   "label": "Class of Insurance",
+   "options": "Fire & Allied\nMotor\nMarine Cargo\nMarine Hull\nEngineering\nAgriculture\nMiscellaneous"
+  },
+  {
+   "fieldname": "sum_insured",
+   "fieldtype": "Currency",
+   "label": "Sum Insured"
+  },
+  {
+   "fieldname": "section_insured",
+   "fieldtype": "Section Break",
+   "label": "Insured Contact"
+  },
+  {
+   "fieldname": "insured_name",
+   "fieldtype": "Data",
+   "label": "Insured Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insured_contact",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "column_break_insured",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "insured_phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "insured_email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_location",
+   "fieldtype": "Section Break",
+   "label": "Loss Location"
+  },
+  {
+   "fieldname": "loss_location",
+   "fieldtype": "Small Text",
+   "label": "Loss Location / Address"
+  },
+  {
+   "fieldname": "section_sla",
+   "fieldtype": "Section Break",
+   "label": "SLA & Timelines"
+  },
+  {
+   "fieldname": "preliminary_report_due",
+   "fieldtype": "Date",
+   "label": "Preliminary Report Due"
+  },
+  {
+   "fieldname": "final_report_due",
+   "fieldtype": "Date",
+   "label": "Final Report Due"
+  },
+  {
+   "fieldname": "column_break_sla",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "preliminary_report_submitted",
+   "fieldtype": "Date",
+   "label": "Preliminary Report Submitted"
+  },
+  {
+   "fieldname": "final_report_submitted",
+   "fieldtype": "Date",
+   "label": "Final Report Submitted"
+  },
+  {
+   "fieldname": "sla_status",
+   "fieldtype": "Select",
+   "label": "SLA Status",
+   "options": "On Track\nAt Risk\nBreached",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_items",
+   "fieldtype": "Section Break",
+   "label": "Loss Items Assessment"
+  },
+  {
+   "fieldname": "loss_items",
+   "fieldtype": "Table",
+   "label": "Loss Items",
+   "options": "Claim Loss Item"
+  },
+  {
+   "fieldname": "section_summary",
+   "fieldtype": "Section Break",
+   "label": "Assessment Summary"
+  },
+  {
+   "fieldname": "total_claimed_amount",
+   "fieldtype": "Currency",
+   "label": "Total Claimed Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_assessed_amount",
+   "fieldtype": "Currency",
+   "label": "Total Assessed Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_summary",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_depreciation",
+   "fieldtype": "Currency",
+   "label": "Total Depreciation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_salvage_value",
+   "fieldtype": "Currency",
+   "label": "Total Salvage Value",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "net_assessed_amount",
+   "fieldtype": "Currency",
+   "label": "Net Assessed Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_documents",
+   "fieldtype": "Section Break",
+   "label": "Document Checklist"
+  },
+  {
+   "fieldname": "required_documents",
+   "fieldtype": "Table",
+   "label": "Required Documents",
+   "options": "Required Document Checklist"
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Internal Notes"
+  },
+  {
+   "fieldname": "internal_notes",
+   "fieldtype": "Text Editor",
+   "label": "Internal Notes"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Site Inspection Log",
+   "link_fieldname": "survey_assignment"
+  },
+  {
+   "link_doctype": "Survey Report",
+   "link_fieldname": "survey_assignment"
+  },
+  {
+   "link_doctype": "Appointment Letter",
+   "link_fieldname": "survey_assignment"
+  },
+  {
+   "link_doctype": "Fee Note",
+   "link_fieldname": "survey_assignment"
+  },
+  {
+   "link_doctype": "Follow-up Log",
+   "link_fieldname": "survey_assignment"
+  },
+  {
+   "link_doctype": "Repudiation Register",
+   "link_fieldname": "survey_assignment"
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Survey Assignment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "claim_ref_no, insured_name, insurer, assigned_surveyor",
+ "sort_field": "appointment_date",
+ "sort_order": "DESC",
+ "title_field": "insured_name",
+ "track_changes": 1
+}

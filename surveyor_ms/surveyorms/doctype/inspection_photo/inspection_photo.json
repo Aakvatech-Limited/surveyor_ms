@@ -1,0 +1,28 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "photo_description",
+  "photo",
+  "taken_at",
+  "remarks"
+ ],
+ "creation": "2024-01-01 00:00:00.000000",
+ "fields": [
+  {"fieldname": "photo_description", "fieldtype": "Data", "label": "Description", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "photo", "fieldtype": "Attach Image", "label": "Photo", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "taken_at", "fieldtype": "Datetime", "label": "Taken At"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Inspection Photo",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}

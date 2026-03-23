@@ -1,0 +1,24 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "specialisation"
+ ],
+ "creation": "2024-01-01 00:00:00.000000",
+ "fields": [
+  {"fieldname": "specialisation", "fieldtype": "Select", "label": "Specialisation",
+   "options": "\nFire & Allied Perils\nMotor\nMarine Cargo\nMarine Hull\nEngineering\nAgriculture\nBurglary & Theft\nMiscellaneous\nBusiness Interruption\nLiability",
+   "reqd": 1, "in_list_view": 1}
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Surveyor Specialisation",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "witness_name",
+  "designation",
+  "organisation",
+  "phone",
+  "signature"
+ ],
+ "creation": "2024-01-01 00:00:00.000000",
+ "fields": [
+  {"fieldname": "witness_name", "fieldtype": "Data", "label": "Name", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "designation", "fieldtype": "Data", "label": "Designation / Role", "in_list_view": 1},
+  {"fieldname": "organisation", "fieldtype": "Data", "label": "Organisation"},
+  {"fieldname": "phone", "fieldtype": "Data", "label": "Phone", "in_list_view": 1},
+  {"fieldname": "signature", "fieldtype": "Attach Image", "label": "Signature"}
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Inspection Witness",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}

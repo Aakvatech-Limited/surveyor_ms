@@ -1,9 +1,11 @@
 app_name = "surveyor_ms"
-app_title = "SurveyorMS"
+app_title = "Surveyor Management System"
 app_publisher = "Emanuel Fidelis"
 app_description = "Surveyor Management System"
 app_email = "emanuelkagombora28@gmail.com"
 app_license = "mit"
+app_logo_url = "/assets/surveyor_ms/images/surveyor-management-system.svg"
+app_home = "/app/surveyor-management-system"
 
 # Apps
 # ------------------
@@ -11,15 +13,14 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "surveyor_ms",
-# 		"logo": "/assets/surveyor_ms/logo.png",
-# 		"title": "SurveyorMS",
-# 		"route": "/surveyor_ms",
-# 		"has_permission": "surveyor_ms.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": app_name,
+		"logo": app_logo_url,
+		"title": app_title,
+		"route": app_home,
+	}
+]
 
 # Includes in <head>
 # ------------------
@@ -100,7 +101,7 @@ app_license = "mit"
 # Name of the app being installed is passed as an argument
 
 # before_app_install = "surveyor_ms.utils.before_app_install"
-# after_app_install = "surveyor_ms.utils.after_app_install"
+after_app_install = "frappe.utils.install.auto_generate_icons_and_sidebar"
 
 # Integration Cleanup
 # -------------------
@@ -108,7 +109,7 @@ app_license = "mit"
 # Name of the app being uninstalled is passed as an argument
 
 # before_app_uninstall = "surveyor_ms.utils.before_app_uninstall"
-# after_app_uninstall = "surveyor_ms.utils.after_app_uninstall"
+after_app_uninstall = "frappe.utils.install.delete_desktop_icon_and_sidebar"
 
 # Desk Notifications
 # ------------------
@@ -249,4 +250,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-

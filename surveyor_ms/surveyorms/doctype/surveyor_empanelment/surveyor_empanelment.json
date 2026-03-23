@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "insurer",
+  "empanelment_code",
+  "empanelment_date",
+  "valid_upto",
+  "remarks"
+ ],
+ "creation": "2024-01-01 00:00:00.000000",
+ "fields": [
+  {"fieldname": "insurer", "fieldtype": "Link", "label": "Insurer", "options": "Insurer Master", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "empanelment_code", "fieldtype": "Data", "label": "Empanelment Code", "in_list_view": 1},
+  {"fieldname": "empanelment_date", "fieldtype": "Date", "label": "Date Empanelled", "in_list_view": 1},
+  {"fieldname": "valid_upto", "fieldtype": "Date", "label": "Valid Upto"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Surveyor Empanelment",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}

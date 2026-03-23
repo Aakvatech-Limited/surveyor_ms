@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:insurer_name",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_identity",
+  "insurer_name",
+  "short_code",
+  "column_break_identity",
+  "is_active",
+  "currency",
+  "section_contact",
+  "contact_person",
+  "email",
+  "column_break_contact",
+  "phone",
+  "erpnext_customer",
+  "section_sla",
+  "preliminary_report_sla_days",
+  "final_report_sla_days",
+  "section_billing",
+  "default_fee_type",
+  "flat_fee_amount",
+  "column_break_billing",
+  "percentage_of_assessed",
+  "section_notes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_identity",
+   "fieldtype": "Section Break",
+   "label": "Insurer Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "insurer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Insurer Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "short_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Short Code"
+  },
+  {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_contact",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Primary Contact"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "description": "Reference to the ERPNext Customer used for invoicing when ERPNext is installed.",
+   "fieldname": "erpnext_customer",
+   "fieldtype": "Data",
+   "label": "ERPNext Customer"
+  },
+  {
+   "fieldname": "section_sla",
+   "fieldtype": "Section Break",
+   "label": "SLA Settings"
+  },
+  {
+   "default": "3",
+   "fieldname": "preliminary_report_sla_days",
+   "fieldtype": "Int",
+   "label": "Preliminary Report SLA (Days)"
+  },
+  {
+   "default": "15",
+   "fieldname": "final_report_sla_days",
+   "fieldtype": "Int",
+   "label": "Final Report SLA (Days)"
+  },
+  {
+   "fieldname": "section_billing",
+   "fieldtype": "Section Break",
+   "label": "Billing Settings"
+  },
+  {
+   "fieldname": "default_fee_type",
+   "fieldtype": "Select",
+   "label": "Default Fee Type",
+   "options": "Flat Fee\nPercentage of Assessed\nAs Per Schedule"
+  },
+  {
+   "depends_on": "eval:doc.default_fee_type=='Flat Fee'",
+   "fieldname": "flat_fee_amount",
+   "fieldtype": "Currency",
+   "label": "Flat Fee Amount"
+  },
+  {
+   "fieldname": "column_break_billing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.default_fee_type=='Percentage of Assessed'",
+   "fieldname": "percentage_of_assessed",
+   "fieldtype": "Percent",
+   "label": "% of Assessed Value"
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Insurer Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "insurer_name, short_code, contact_person, erpnext_customer",
+ "sort_field": "insurer_name",
+ "sort_order": "ASC",
+ "title_field": "insurer_name",
+ "track_changes": 1
+}

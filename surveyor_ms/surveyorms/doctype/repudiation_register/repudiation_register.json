@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:RD-.YYYY.-.#####",
+ "doctype": "DocType",
+ "document_type": "Transaction",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_reference",
+  "survey_assignment",
+  "insurer",
+  "dispute_raised_by",
+  "dispute_date",
+  "column_break_reference",
+  "status",
+  "dispute_type",
+  "section_dispute",
+  "disputed_amount",
+  "our_assessed_amount",
+  "column_break_dispute",
+  "difference_amount",
+  "resolved_amount",
+  "section_narrative",
+  "dispute_grounds",
+  "section_position",
+  "our_position",
+  "section_resolution",
+  "resolution_type",
+  "resolution_date",
+  "section_escalation",
+  "escalated_to_ombudsman",
+  "ombudsman_ref",
+  "column_break_escalation",
+  "court_proceedings"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_reference",
+   "fieldtype": "Section Break",
+   "label": "Dispute Reference"
+  },
+  {
+   "fieldname": "survey_assignment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Survey Assignment",
+   "options": "Survey Assignment",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "survey_assignment.insurer",
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "label": "Insurer",
+   "options": "Insurer Master",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dispute_raised_by",
+   "fieldtype": "Select",
+   "label": "Dispute Raised By",
+   "options": "Insured\nInsurer\nThird Party"
+  },
+  {
+   "default": "Today",
+   "fieldname": "dispute_date",
+   "fieldtype": "Date",
+   "label": "Date of Dispute",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_reference",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nIn Progress\nResolved\nClosed"
+  },
+  {
+   "fieldname": "dispute_type",
+   "fieldtype": "Select",
+   "label": "Dispute Type",
+   "options": "Assessment Amount\nRepudiation\nDelay\nPolicy Interpretation\nOther"
+  },
+  {
+   "fieldname": "section_dispute",
+   "fieldtype": "Section Break",
+   "label": "Financial Dispute"
+  },
+  {
+   "fieldname": "disputed_amount",
+   "fieldtype": "Currency",
+   "label": "Amount Disputed"
+  },
+  {
+   "fieldname": "our_assessed_amount",
+   "fieldtype": "Currency",
+   "label": "Our Assessed Amount"
+  },
+  {
+   "fieldname": "column_break_dispute",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "difference_amount",
+   "fieldtype": "Currency",
+   "label": "Difference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resolved_amount",
+   "fieldtype": "Currency",
+   "label": "Final Resolved Amount"
+  },
+  {
+   "fieldname": "section_narrative",
+   "fieldtype": "Section Break",
+   "label": "Grounds for Dispute"
+  },
+  {
+   "fieldname": "dispute_grounds",
+   "fieldtype": "Text Editor",
+   "label": "Grounds for Dispute"
+  },
+  {
+   "fieldname": "section_position",
+   "fieldtype": "Section Break",
+   "label": "Our Position"
+  },
+  {
+   "fieldname": "our_position",
+   "fieldtype": "Text Editor",
+   "label": "Our Position"
+  },
+  {
+   "fieldname": "section_resolution",
+   "fieldtype": "Section Break",
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "resolution_type",
+   "fieldtype": "Select",
+   "label": "Resolution Type",
+   "options": "Upheld\nPartially Revised\nRevised in Full\nArbitration\nWithdrawn"
+  },
+  {
+   "fieldname": "resolution_date",
+   "fieldtype": "Date",
+   "label": "Resolution Date"
+  },
+  {
+   "fieldname": "section_escalation",
+   "fieldtype": "Section Break",
+   "label": "Escalation"
+  },
+  {
+   "fieldname": "escalated_to_ombudsman",
+   "fieldtype": "Check",
+   "label": "Escalated to Ombudsman"
+  },
+  {
+   "fieldname": "ombudsman_ref",
+   "fieldtype": "Data",
+   "label": "Ombudsman Reference No."
+  },
+  {
+   "fieldname": "column_break_escalation",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "court_proceedings",
+   "fieldtype": "Check",
+   "label": "Court Proceedings Initiated"
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Repudiation Register",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "survey_assignment, insurer, dispute_type",
+ "sort_field": "dispute_date",
+ "sort_order": "DESC",
+ "title_field": "survey_assignment",
+ "track_changes": 1
+}

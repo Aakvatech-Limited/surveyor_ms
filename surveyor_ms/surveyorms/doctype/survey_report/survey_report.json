@@ -1,0 +1,260 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SR-.YYYY.-.#####",
+ "doctype": "DocType",
+ "document_type": "Transaction",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_reference",
+  "report_type",
+  "survey_assignment",
+  "report_date",
+  "column_break_reference",
+  "status",
+  "reviewed_by",
+  "approved_by",
+  "section_context",
+  "insurer",
+  "claim_ref_no",
+  "policy_no",
+  "column_break_context",
+  "assigned_surveyor",
+  "date_of_loss",
+  "section_cause",
+  "cause_of_loss",
+  "section_damage",
+  "extent_of_damage",
+  "section_items",
+  "assessed_items",
+  "section_recommendation",
+  "recommendation",
+  "section_basis",
+  "basis_of_recommendation",
+  "section_financial",
+  "excess_deductible",
+  "under_insurance_applies",
+  "column_break_financial",
+  "under_insurance_amount",
+  "net_recommended_payable",
+  "section_attachment",
+  "final_report_pdf"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_reference",
+   "fieldtype": "Section Break",
+   "label": "Report Details"
+  },
+  {
+   "fieldname": "report_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Report Type",
+   "options": "Preliminary\nFinal\nRe-survey\nSupplementary",
+   "reqd": 1
+  },
+  {
+   "fieldname": "survey_assignment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Survey Assignment",
+   "options": "Survey Assignment",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Report Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_reference",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted to Insurer\nAccepted\nQueried\nAmended"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "User"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_context",
+   "fieldtype": "Section Break",
+   "label": "Assignment Context"
+  },
+  {
+   "fetch_from": "survey_assignment.insurer",
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "label": "Insurer",
+   "options": "Insurer Master",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "survey_assignment.claim_ref_no",
+   "fieldname": "claim_ref_no",
+   "fieldtype": "Data",
+   "label": "Claim Reference No.",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "survey_assignment.policy_no",
+   "fieldname": "policy_no",
+   "fieldtype": "Data",
+   "label": "Policy No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_context",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "survey_assignment.assigned_surveyor",
+   "fieldname": "assigned_surveyor",
+   "fieldtype": "Link",
+   "label": "Assigned Surveyor",
+   "options": "Surveyor Profile",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "survey_assignment.date_of_loss",
+   "fieldname": "date_of_loss",
+   "fieldtype": "Date",
+   "label": "Date of Loss",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_cause",
+   "fieldtype": "Section Break",
+   "label": "Cause of Loss"
+  },
+  {
+   "fieldname": "cause_of_loss",
+   "fieldtype": "Text Editor",
+   "label": "Cause of Loss"
+  },
+  {
+   "fieldname": "section_damage",
+   "fieldtype": "Section Break",
+   "label": "Extent of Damage"
+  },
+  {
+   "fieldname": "extent_of_damage",
+   "fieldtype": "Text Editor",
+   "label": "Extent of Damage"
+  },
+  {
+   "fieldname": "section_items",
+   "fieldtype": "Section Break",
+   "label": "Assessed Items"
+  },
+  {
+   "fieldname": "assessed_items",
+   "fieldtype": "Table",
+   "label": "Assessed Items",
+   "options": "Claim Loss Item"
+  },
+  {
+   "fieldname": "section_recommendation",
+   "fieldtype": "Section Break",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Select",
+   "label": "Recommendation",
+   "options": "Admit in Full\nAdmit Partially\nRepudiate\nPending Further Investigation"
+  },
+  {
+   "fieldname": "section_basis",
+   "fieldtype": "Section Break",
+   "label": "Basis of Recommendation"
+  },
+  {
+   "fieldname": "basis_of_recommendation",
+   "fieldtype": "Text Editor",
+   "label": "Basis of Recommendation"
+  },
+  {
+   "fieldname": "section_financial",
+   "fieldtype": "Section Break",
+   "label": "Financial Summary"
+  },
+  {
+   "fieldname": "excess_deductible",
+   "fieldtype": "Currency",
+   "label": "Excess / Deductible"
+  },
+  {
+   "fieldname": "under_insurance_applies",
+   "fieldtype": "Check",
+   "label": "Under-insurance Applies"
+  },
+  {
+   "fieldname": "column_break_financial",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.under_insurance_applies==1",
+   "fieldname": "under_insurance_amount",
+   "fieldtype": "Currency",
+   "label": "Under-insurance Amount"
+  },
+  {
+   "bold": 1,
+   "fieldname": "net_recommended_payable",
+   "fieldtype": "Currency",
+   "label": "Net Recommended Payable"
+  },
+  {
+   "fieldname": "section_attachment",
+   "fieldtype": "Section Break",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "final_report_pdf",
+   "fieldtype": "Attach",
+   "label": "Report PDF"
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Survey Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "survey_assignment, claim_ref_no, insurer, assigned_surveyor",
+ "sort_field": "report_date",
+ "sort_order": "DESC",
+ "title_field": "survey_assignment",
+ "track_changes": 1
+}

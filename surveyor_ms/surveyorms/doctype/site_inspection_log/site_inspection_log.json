@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SIL-.YYYY.-.#####",
+ "doctype": "DocType",
+ "document_type": "Transaction",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_reference",
+  "survey_assignment",
+  "assigned_surveyor",
+  "column_break_reference",
+  "inspection_date",
+  "inspection_type",
+  "section_location",
+  "location_description",
+  "section_coordinates",
+  "gps_latitude",
+  "column_break_coordinates",
+  "gps_longitude",
+  "section_inspection",
+  "inspection_notes",
+  "section_witnesses",
+  "witnesses",
+  "section_photos",
+  "inspection_photographs",
+  "section_followup",
+  "pending_items",
+  "column_break_followup",
+  "next_visit_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_reference",
+   "fieldtype": "Section Break",
+   "label": "Inspection Reference"
+  },
+  {
+   "bold": 1,
+   "fieldname": "survey_assignment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Survey Assignment",
+   "options": "Survey Assignment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_surveyor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Surveyor",
+   "options": "Surveyor Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_reference",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "now",
+   "fieldname": "inspection_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Inspection Date & Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inspection_type",
+   "fieldtype": "Select",
+   "label": "Inspection Type",
+   "options": "Initial\nFollow-up\nRe-inspection\nJoint\nFinal"
+  },
+  {
+   "fieldname": "section_location",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "location_description",
+   "fieldtype": "Small Text",
+   "label": "Location / Address"
+  },
+  {
+   "fieldname": "section_coordinates",
+   "fieldtype": "Section Break",
+   "label": "Coordinates"
+  },
+  {
+   "fieldname": "gps_latitude",
+   "fieldtype": "Float",
+   "label": "GPS Latitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "column_break_coordinates",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gps_longitude",
+   "fieldtype": "Float",
+   "label": "GPS Longitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "section_inspection",
+   "fieldtype": "Section Break",
+   "label": "Inspection Details"
+  },
+  {
+   "fieldname": "inspection_notes",
+   "fieldtype": "Text Editor",
+   "label": "Inspection Notes"
+  },
+  {
+   "fieldname": "section_witnesses",
+   "fieldtype": "Section Break",
+   "label": "Witnesses / Persons Present"
+  },
+  {
+   "fieldname": "witnesses",
+   "fieldtype": "Table",
+   "label": "Witnesses",
+   "options": "Inspection Witness"
+  },
+  {
+   "fieldname": "section_photos",
+   "fieldtype": "Section Break",
+   "label": "Photographs"
+  },
+  {
+   "fieldname": "inspection_photographs",
+   "fieldtype": "Table",
+   "label": "Photographs",
+   "options": "Inspection Photo"
+  },
+  {
+   "fieldname": "section_followup",
+   "fieldtype": "Section Break",
+   "label": "Follow-up"
+  },
+  {
+   "fieldname": "pending_items",
+   "fieldtype": "Text",
+   "label": "Pending Items"
+  },
+  {
+   "fieldname": "column_break_followup",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "next_visit_date",
+   "fieldtype": "Date",
+   "label": "Next Visit Date"
+  }
+ ],
+ "modified": "2026-03-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Site Inspection Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "survey_assignment, assigned_surveyor, location_description",
+ "sort_field": "inspection_date",
+ "sort_order": "DESC",
+ "title_field": "survey_assignment",
+ "track_changes": 1
+}

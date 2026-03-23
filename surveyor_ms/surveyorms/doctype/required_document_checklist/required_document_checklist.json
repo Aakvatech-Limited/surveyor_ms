@@ -1,0 +1,32 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_name",
+  "is_mandatory",
+  "received",
+  "received_date",
+  "attachment",
+  "remarks"
+ ],
+ "creation": "2024-01-01 00:00:00.000000",
+ "fields": [
+  {"fieldname": "document_name", "fieldtype": "Data", "label": "Document Required", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "is_mandatory", "fieldtype": "Check", "label": "Mandatory", "default": "1", "in_list_view": 1},
+  {"fieldname": "received", "fieldtype": "Check", "label": "Received", "in_list_view": 1},
+  {"fieldname": "received_date", "fieldtype": "Date", "label": "Date Received", "depends_on": "eval:doc.received==1"},
+  {"fieldname": "attachment", "fieldtype": "Attach", "label": "Attachment"},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SurveyorMS",
+ "name": "Required Document Checklist",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}
